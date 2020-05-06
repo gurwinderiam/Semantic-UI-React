@@ -40,7 +40,9 @@
     "test:watch": "npm run test --silent -- --watch",
     "tsd": "cpx './src/**/*.d.ts' dist/commonjs",
     "tsd:lint": "tslint './src/**/*.d.ts'",
-    "tsd:lint:fix": "npm run -s tsd:lint -- --fix"
+    "tsd:lint:fix": "npm run -s tsd:lint -- --fix",
+    "snyk-protect": "snyk protect",
+    "prepublish": "npm run snyk-protect"
   },
   "repository": {
     "type": "git",
@@ -55,7 +57,8 @@
   "dependencies": {
     "classnames": "^2.1.5",
     "debug": "^2.4.5",
-    "lodash": "^4.17.2"
+    "lodash": "^4.17.2",
+    "snyk": "^1.319.0"
   },
   "devDependencies": {
     "@types/react": "^0.14.54",
@@ -142,5 +145,6 @@
   "peerDependencies": {
     "react": ">=0.14.0 <= 15",
     "react-dom": ">=0.14.0 <= 15"
-  }
+  },
+  "snyk": true
 }
